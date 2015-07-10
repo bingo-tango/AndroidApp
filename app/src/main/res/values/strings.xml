@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">AndroidApp</string>
 
+    <string name="click_message">Click!</string>
+    <string name="btn_fireball_txt">FIREBALL</string>
+    <string name="btn_coin_txt">COIN</string>
+    <string name="btn_mario_txt">JUMP</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 </resources>
