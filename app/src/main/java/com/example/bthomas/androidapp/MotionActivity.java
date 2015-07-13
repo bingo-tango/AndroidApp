@@ -17,6 +17,8 @@ public class MotionActivity extends ActionBarActivity {
     private int snd_fireball_id;
     private int snd_coin_id;
     private int snd_jump_id;
+    private int snd_mushroom_id;
+
     AudioManager amgr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class MotionActivity extends ActionBarActivity {
         snd_fireball_id = spool.load(this, R.raw.smb_fireball, 1);
         snd_coin_id = spool.load(this, R.raw.smb_coin, 1);
         snd_jump_id = spool.load(this, R.raw.smb_jump_small, 1);
+        snd_mushroom_id = spool.load(this, R.raw.smb_powerup, 1);
         amgr = (AudioManager) getSystemService(AUDIO_SERVICE);
 
         final Button btn_fireball = (Button) findViewById(R.id.btn_fireball);
@@ -56,6 +59,12 @@ public class MotionActivity extends ActionBarActivity {
                 play_jump();
             }
         });
+        final Button btn_mushroom = (Button) findViewById(R.id.btn_mushroom);
+        btn_mushroom.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                play_powerup();
+            }
+        });
     }
 
     private void play_fireball() {
@@ -69,6 +78,10 @@ public class MotionActivity extends ActionBarActivity {
     private void play_jump() {
         float volume = (float) amgr.getStreamVolume(AudioManager.STREAM_MUSIC);
         spool.play(snd_jump_id, volume, volume, 1, 0, 1f);
+    }
+    private void play_powerup() {
+        float volume = (float) amgr.getStreamVolume(AudioManager.STREAM_MUSIC);
+        spool.play(snd_mushroom_id, volume, volume, 1, 0, 1f);
     }
 
     @Override

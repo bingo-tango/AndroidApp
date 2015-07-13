@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidApp</string>
+    <string name="app_name">Mario Sounds!</string>
 
     <string name="click_message">Click!</string>
     <string name="btn_fireball_txt">FIREBALL</string>
